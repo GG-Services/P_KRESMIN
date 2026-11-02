@@ -150,11 +150,6 @@
                     </div>
                 </div>
 
-                <button onclick="toggleChatbot()" class="p-2.5 bg-brand-600 text-white rounded-xl shadow-md hover:bg-brand-700 transition flex items-center gap-2 font-bold">
-                    <i class="fa-solid fa-robot text-sm"></i>
-                    <span class="hidden sm:inline">Assistant IA</span>
-                </button>
-
                 <button onclick="toggleQuickSummary()" class="p-2.5 rounded-xl glass-card hover:bg-slate-100 text-slate-600 hover:text-brand-600 transition shadow-sm">
                     <i class="fa-solid fa-circle-info text-sm"></i>
                 </button>
@@ -548,16 +543,13 @@
             <div id="lots-summary-wrapper" class="space-y-6 collapsible-section collapsed">
                 <!-- NOUVELLE SECTION : SYNTHESE GLOBALE DES LOTS -->
                 <div class="glass-card rounded-2xl p-6 border-slate-200 bg-white shadow-sm">
-                    <div class="mb-4 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div class="mb-4 flex items-center justify-between">
                         <div>
                             <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
                                 <i class="fa-solid fa-table-list text-brand-600"></i> Synthèse Consolidée de l'Exécution des Marchés
                             </h2>
                             <p class="text-xs text-slate-500 mt-1">Comparatif d'avancement Physique, Consommation des Délais et Exécution Financière</p>
                         </div>
-                        <button onclick="collapseLotsSummary()" class="px-3 py-1.5 bg-slate-100 text-slate-600 hover:text-brand-700 text-xs font-bold rounded-xl border border-slate-200 shadow-sm hover:bg-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-                            <i class="fa-solid fa-compress"></i> Réduire la Synthèse
-                        </button>
                     </div>
                     <div class="overflow-x-auto custom-scrollbar">
                         <table class="w-full text-left text-xs border-collapse">
@@ -713,16 +705,13 @@
             <div id="par-summary-wrapper" class="space-y-6 collapsible-section collapsed">
                 <!-- NOUVELLE SECTION : ANALYTICS PAR 1 & 2 -->
                 <div class="glass-card rounded-2xl p-6 border-slate-200 bg-white shadow-sm">
-                    <div class="mb-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
                             <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
                                 <i class="fa-solid fa-chart-line text-emerald-600"></i> Suivi d'Avancement des Plans de Réinstallation
                             </h2>
                             <p class="text-xs text-slate-500 mt-1">État des activités PAR 1 et statut de préparation des sites PAR 2A</p>
                         </div>
-                        <button onclick="collapseParSummary()" class="px-3 py-1.5 bg-slate-100 text-slate-600 hover:text-emerald-700 text-xs font-bold rounded-xl border border-slate-200 shadow-sm hover:bg-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-                            <i class="fa-solid fa-compress"></i> Réduire la Synthèse
-                        </button>
                     </div>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -862,16 +851,11 @@
             <div id="pole-summary-wrapper" class="space-y-6 collapsible-section collapsed">
                 <!-- NOUVELLE SECTION : ETAT DES ETUDES IRRIGATION (20 000 ha) -->
                 <div class="glass-card rounded-2xl p-6 border-slate-200 bg-white shadow-sm">
-                    <div class="mb-4 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                        <div>
-                            <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
-                                <i class="fa-solid fa-map text-brand-600"></i> Progression du Schéma d'Aménagement (20 000 ha)
-                            </h2>
-                            <p class="text-xs text-slate-500 mt-1">Validation des études APD / DAO par lots de sites (Phase 3)</p>
-                        </div>
-                        <button onclick="collapsePoleSummary()" class="px-3 py-1.5 bg-slate-100 text-slate-600 hover:text-amber-700 text-xs font-bold rounded-xl border border-slate-200 shadow-sm hover:bg-slate-200 transition flex items-center gap-1.5 whitespace-nowrap">
-                            <i class="fa-solid fa-compress"></i> Réduire la Synthèse
-                        </button>
+                    <div class="mb-4">
+                        <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-map text-brand-600"></i> Progression du Schéma d'Aménagement (20 000 ha)
+                        </h2>
+                        <p class="text-xs text-slate-500 mt-1">Validation des études APD / DAO par lots de sites (Phase 3)</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-white border border-emerald-200 shadow-sm rounded-xl p-4 flex flex-col items-center text-center relative overflow-hidden">
@@ -1178,101 +1162,6 @@
 
     </main>
 
-        <!-- HEADER METRIQUES ET BOUTONS -->
-        <div class="flex flex-wrap items-center gap-3 text-xs">
-            <div class="glass-card px-3.5 py-2 rounded-xl flex items-center space-x-2.5 border-slate-200">
-                <i class="fa-solid fa-building-columns text-amber-500 text-sm"></i>
-                <div>
-                    <span class="text-slate-400 block text-[10px] font-medium uppercase">Tutelle Strategic</span>
-                    <span class="font-bold text-slate-800">Présidence de la République</span>
-                </div>
-            </div>
-
-            <div class="glass-card px-3.5 py-2 rounded-xl flex items-center space-x-2.5 border-emerald-200 bg-emerald-50/50">
-                <span class="relative flex h-2.5 w-2.5">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <div>
-                    <span class="text-slate-500 block text-[10px] font-medium uppercase">Cible Relance</span>
-                    <span class="font-extrabold text-emerald-700">01 Juin 2026</span>
-                </div>
-            </div>
-
-            <button onclick="toggleChatbot()" class="p-2.5 bg-brand-600 text-white rounded-xl shadow-md hover:bg-brand-700 transition flex items-center gap-2 font-bold">
-                <i class="fa-solid fa-robot text-sm"></i>
-                <span class="hidden sm:inline">Assistant IA</span>
-            </button>
-
-            <button onclick="toggleQuickSummary()" class="p-2.5 rounded-xl glass-card hover:bg-slate-100 text-slate-600 hover:text-brand-600 transition shadow-sm">
-                <i class="fa-solid fa-circle-info text-sm"></i>
-            </button>
-        </div>
-    </header>
-    <button id="chatbot-fab" onclick="toggleChatbot()" class="fixed bottom-6 right-6 z-50 p-4 bg-gradient-to-r from-brand-600 to-brand-700 text-white rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2 border-2 border-white/40">
-        <i class="fa-solid fa-robot text-2xl"></i>
-        <span class="font-bold text-xs pr-1 hidden md:inline">Assistant Kandadji</span>
-        <span class="relative flex h-3 w-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
-        </span>
-    </button>
-
-    <!-- MODAL / DRAWER DU CHATBOT INTELLIGENT -->
-    <div id="chatbot-modal" class="fixed inset-y-0 right-0 w-full sm:w-[460px] bg-white shadow-2xl z-[100] transform translate-x-full transition-transform duration-300 ease-out flex flex-col border-l border-slate-200">
-        <!-- HEADER CHATBOT -->
-        <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-slate-900 text-white p-4 flex items-center justify-between border-b border-white/10 shadow-sm">
-            <div class="flex items-center space-x-3">
-                <div class="p-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20">
-                    <i class="fa-solid fa-robot text-xl text-brand-200"></i>
-                </div>
-                <div>
-                    <h3 class="font-extrabold text-sm flex items-center gap-2">
-                        Assistant IA Kandadji
-                        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded-full font-semibold">Gratuit & Intelligent</span>
-                    </h3>
-                    <p class="text-[10px] text-slate-300">Système Décisionnel & FAQ Interactif (P_KRESMIN)</p>
-                </div>
-            </div>
-            <button onclick="toggleChatbot()" class="text-slate-300 hover:text-white p-2 rounded-lg hover:bg-white/10 transition">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-        </div>
-
-        <!-- HISTORIQUE DU CHAT -->
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs custom-scrollbar bg-slate-50/70">
-            <!-- MESSAGE DE BIENVENUE -->
-            <div class="flex items-start gap-2.5">
-                <div class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0 shadow-sm">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-                <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm space-y-2 max-w-[88%] text-slate-700">
-                    <p class="font-bold text-brand-700 text-[11px]">Bonjour ! Je suis l'assistant intelligent du Programme Kandadji.</p>
-                    <p>Posez-moi n'importe quelle question sur le projet (lots, financements, PAR, irrigation, recrutements ABK, calendrier de relance). Toutes mes réponses contiennent des <strong>boutons de sources directs et cliquables</strong> pour naviguer instantanément vers l'information exacte !</p>
-                    <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-1.5">
-                        <button onclick="sendQuickQuery('Où en est le Lot 1 Génie Civil ?')" class="px-2 py-1 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 text-slate-600 rounded-md text-[10px] border border-slate-200 transition font-medium">Statut Lot 1 ?</button>
-                        <button onclick="sendQuickQuery('Quel est le statut du PAR 2 et le gap de financement ?')" class="px-2 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-600 text-slate-600 rounded-md text-[10px] border border-slate-200 transition font-medium">Statut PAR 2 ?</button>
-                        <button onclick="sendQuickQuery('Qui sont les 11 Bailleurs de fonds du projet ?')" class="px-2 py-1 bg-slate-100 hover:bg-amber-50 hover:text-amber-600 text-slate-600 rounded-md text-[10px] border border-slate-200 transition font-medium">11 Bailleurs ?</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- INDICATEUR DE CHARGEMENT -->
-        <div id="chat-loading" class="px-4 py-2 bg-slate-50 hidden border-t border-slate-100 text-[11px] text-brand-600 flex items-center gap-2">
-            <i class="fa-solid fa-circle-notch animate-spin"></i>
-            <span class="font-semibold">Analyse et extraction des données certifiées du Programme...</span>
-        </div>
-
-        <!-- BARRE DE SAISIE -->
-        <div class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
-            <input type="text" id="chat-input" onkeypress="handleChatKeyPress(event)" placeholder="Posez votre question sur Kandadji (ex: budget, Lot 3, PAR)..." class="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
-            <button onclick="sendChatMessage()" class="p-2.5 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white rounded-xl shadow-md transition flex items-center justify-center">
-                <i class="fa-solid fa-paper-plane text-xs"></i>
-            </button>
-        </div>
-    </div>
-
     <!-- FOOTER EXÉCUTIF EN STYLE CLAIR -->
     <footer class="border-t border-slate-200 bg-white text-slate-500 text-xs py-4 mt-auto">
         <div class="max-w-7xl mx-auto px-4 text-center flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -1280,6 +1169,70 @@
             <div class="text-[11px] text-slate-400">Mise à jour interactive : 2026 — Système P_KRESMIN</div>
         </div>
     </footer>
+
+    <!-- WIDGET CHATBOT INTELLIGENT -->
+    <div id="chatbot-widget" class="fixed bottom-5 right-5 z-[90]">
+        <!-- BOUTON D'OUVERTURE DE CHAT -->
+        <button id="chatbot-toggle-btn" onclick="toggleChatbot()" class="bg-gradient-to-tr from-brand-700 to-brand-500 hover:from-brand-800 hover:to-brand-600 text-white rounded-full p-4 shadow-xl flex items-center justify-center space-x-2 transition-all duration-300 hover:scale-105 border-2 border-white/80 group">
+            <i class="fa-solid fa-robot text-xl animate-bounce group-hover:animate-none"></i>
+            <span class="font-bold text-xs pr-1 hidden sm:inline">Assistant Kandadji</span>
+        </button>
+
+        <!-- FENÊTRE DU CHATBOT -->
+        <div id="chatbot-window" class="hidden absolute bottom-16 right-0 w-[92vw] sm:w-[420px] max-h-[600px] h-[75vh] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300">
+            <!-- CHAT HEADER -->
+            <div class="bg-gradient-to-r from-brand-900 via-brand-700 to-brand-600 text-white p-4 flex items-center justify-between border-b border-brand-800">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-amber-300 font-black text-sm">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm flex items-center gap-1.5">
+                            Assistant Kandadji AI
+                            <span class="text-[9px] bg-emerald-500 text-white font-bold px-1.5 py-0.2 rounded-full uppercase tracking-wider">En Ligne</span>
+                        </h4>
+                        <p class="text-[11px] text-brand-100/90">Posez vos questions sur le Programme P_KRESMIN</p>
+                    </div>
+                </div>
+                <button onclick="toggleChatbot()" class="text-white/80 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- MESSAGES CONTAINER -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto custom-scrollbar space-y-4 bg-slate-50/60 text-xs">
+                <!-- MESSAGE DE BIENVENUE -->
+                <div class="flex items-start gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0 shadow-sm mt-0.5">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-xs text-slate-700 max-w-[85%] space-y-2">
+                        <p class="font-medium">Bonjour ! Je suis l'assistant virtuel du Programme Kandadji (P_KRESMIN).</p>
+                        <p class="text-slate-500">Posez-moi n'importe quelle question sur les <strong>lots</strong>, le <strong>PAR</strong>, l'<strong>irrigation</strong>, les <strong>bailleurs</strong> ou le <strong>planning de relance</strong>.</p>
+                        <div class="pt-1 flex flex-wrap gap-1.5">
+                            <button onclick="askQuickQuestion('Quelle est la date cible de reprise des travaux ?')" class="text-[10px] bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 px-2 py-1 rounded-lg font-medium transition text-left">💡 Date de relance ?</button>
+                            <button onclick="askQuickQuestion('Quel est l\'avancement du Lot 1 ?')" class="text-[10px] bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 px-2 py-1 rounded-lg font-medium transition text-left">💡 Avancement Lot 1 ?</button>
+                            <button onclick="askQuickQuestion('Qui finance le Plan de Réinstallation PAR 2A ?')" class="text-[10px] bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 px-2 py-1 rounded-lg font-medium transition text-left">💡 Financement PAR 2A ?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INDICATEUR DE CHARGEMENT -->
+            <div id="chat-loading" class="hidden px-4 py-2 bg-slate-50 text-slate-500 text-[11px] flex items-center gap-2 border-t border-slate-100">
+                <i class="fa-solid fa-circle-notch animate-spin text-brand-600"></i>
+                <span class="italic">Recherche et synthèse des données en cours...</span>
+            </div>
+
+            <!-- INPUT CHAT -->
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+                <input type="text" id="chat-input" placeholder="Poser une question sur le projet..." class="flex-1 bg-slate-100 border border-slate-200 text-slate-800 text-xs rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-500 focus:bg-white transition" required>
+                <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white rounded-xl p-2.5 px-3.5 transition flex items-center justify-center shadow-md">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- MODAL POUR LA CARTE (ZOOM) -->
     <div id="map-modal" class="fixed inset-0 z-[100] bg-slate-900/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300 opacity-0">
@@ -1296,265 +1249,1202 @@
     <!-- SCRIPT APPLICATION & LOGIQUE DYNAMIQUE ENRICHIE -->
     <script>
         // DONNEES COMPLETES ENRICHIES DES LOTS
-        // ================= LOGIQUE CHATBOT IA INTELLIGENT AVEC LIENS SOURCES =================
+        const dataLots = {
+            lot1: {
+                title: "Lot 1 : Génie Civil du Barrage & Hydromécanique",
+                entreprise: "CGGC (China Gezhouba Group Company)",
+                moe: "Tractebel / Coyne et Bellier",
+                statusBadge: "bg-amber-50 text-amber-700 border-amber-200",
+                statusTxt: "Suspension (Reprise 01/06/2026)",
+                img: "https://6ae0784306a8db5b90f2aa66.imgix.net/sandbox/Infra_barrage.png?auto=format&fit=crop&w=1200&q=100",
+                physique: 30.5,
+                delai: 88.89,
+                finance: 32.4,
+                facture: "49,31 Mds FCFA",
+                paye: "49,56 Mds FCFA (avec avance)",
+                contrat: "Contrat initial (1A) signé le 26 déc 2018 (46 mois). Après 4 prolongations, l'échéance actuelle est fixée au 26/03/2027. Le nouveau planning cible (Version IX-A) soumis par CGGC prévoit l'achèvement total à fin 2030.",
+                difficultes: [
+                    "Suspension totale des travaux sur site depuis le 8 août 2023 pour cas de force majeure.",
+                    "Clôture du prêt de la BID entraînant un gap de financement massif (77.42% sur génie civil et 68.16% sur l'hydromécanique).",
+                    "Retrait du Niger de la CEDEAO impactant potentiellement les fonds de la BIDC (gap estimé de 78.52%).",
+                    "Saisie de 1,145 Md FCFA sur le compte ABK par la DGI au titre des impôts dus par CGGC.",
+                    "Quatre préalables de CGGC pour reprendre : Sécurité FDS garantie, financements réalignés, corridor d'importation fluide et fiscalité régularisée."
+                ],
+                solutions: [
+                    "Une mission conjointe avec le Premier Ministre (Avril 2026) a validé un plan d'action exigeant la reprise des travaux au 1er juin 2026.",
+                    "Déploiement en cours d'un dispositif de sécurité FDS de haut niveau avec réunions de coordination mensuelles.",
+                    "Actualisation de l'étude de faisabilité (par STUDI) validée en avril 2025 pour solliciter un nouveau prêt BID.",
+                    "Assistance d'un consultant indépendant pour évaluer l'éligibilité du reliquat du Lot 1 à un financement direct IDA (BM)."
+                ]
+            },
+            lot2: {
+                title: "Lot 2 : Centrale Hydroélectrique (130 MW / 629 GWh)",
+                entreprise: "Groupement CGGC / ZHEFU HOLDING",
+                moe: "Cabinet EIPL",
+                statusBadge: "bg-amber-50 text-amber-700 border-amber-200",
+                statusTxt: "Inactif sur site - Attente Lot 1",
+                img: "https://6ae0784306a8db5b90f2aa66.imgix.net/sandbox/centrale.png?auto=format&fit=crop&w=1200&q=100",
+                physique: 17.3,
+                delai: 86.67,
+                finance: 20.0,
+                facture: "22,65 M$ USD (Avance 20%)",
+                paye: "Paiements réguliers assurés par IDA",
+                contrat: "OS de démarrage émis le 09/12/2021 (42 mois initiaux). Le contrat qui expirait en mars 2025 a été prorogé par Ordre de Service. Les premières pièces encastrées ont été livrées sur site.",
+                difficultes: [
+                    "Avancement bloqué à 17.3% car la construction dépend directement des ouvrages béton du Lot 1 (suspendus depuis août 2023).",
+                    "Suspension du co-financement de l'AFD qui couvrait initialement 44% du marché, soit environ 39.87 Millions USD.",
+                    "L'entreprise signale d'importants retards dus aux lenteurs d'approbation des plans d'aménagement civil et aux nombreuses modifications de conception proposées."
+                ],
+                solutions: [
+                    "La Banque Mondiale (IDA) a acté le principe de reprendre à 100% la quote-part initialement prévue par l'AFD (6ème restructuration en cours).",
+                    "Essais techniques validés sur le modèle réduit de la turbine Kaplan (Juin-Sept 2023) à l'institut FINE en Chine.",
+                    "Décision ferme de revenir à la conception de base de la centrale pour limiter les surcoûts liés aux variantes proposées par le groupement."
+                ]
+            },
+            lot3: {
+                title: "Lot 3 : Ligne HT 132kV Kandadji-Niamey & Postes",
+                entreprise: "KALPATARU Power Transmission Ltd (Inde)",
+                moe: "Cabinet Feedbak",
+                statusBadge: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                statusTxt: "Ligne (83.3%) - Poste (0%)",
+                img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=100",
+                physique: 51.62,
+                delai: 87.0,
+                finance: 47.32,
+                facture: "20,38 M$ USD facturés",
+                paye: "17,06 M$ USD (Impayés BID: 3,32 M$)",
+                contrat: "Démarrage le 16/09/2022 (30 mois). Un nouvel avenant en préparation prévoit une prolongation de 26 mois, repoussant l'échéance au 30 septembre 2027 pour couvrir l'ensemble.",
+                difficultes: [
+                    "Forte asymétrie de progression : la ligne avance bien (83.3%) mais le poste d'arrivée est complètement à l'arrêt (0%).",
+                    "Suspension des décaissements par la BID depuis mars 2024 causée par les arriérés de dette du Niger (gap impayé de 3.32 M$ affectant KALPATARU).",
+                    "Modification majeure : déplacement du poste 132kV de Goroubanda vers Bangoula et changement du tracé près de l'aéroport (Pylônes AP6/AP10)."
+                ],
+                solutions: [
+                    "Finalisation et validation par la Banque Mondiale des rapports d'actualisation de l'EIES (Environnement) et du PAR (Social) en début 2026.",
+                    "Le poids relatif de la ligne dans le projet a été reconsidéré (62% ligne / 38% poste) pour refléter l'effort de terrain.",
+                    "Négociations urgentes pour la reprise des flux financiers de la BID afin de lancer la construction du poste de Bangoula."
+                ]
+            },
+            lot4: {
+                title: "Lot 4 : Déviation de la Route RN1-W",
+                entreprise: "ESICO BTP (Reprise après SOROUBAT)",
+                moe: "Direction Générale des Routes",
+                statusBadge: "bg-red-50 text-red-700 border-red-200",
+                statusTxt: "Arrêt Sécuritaire",
+                img: "https://6ae0784306a8db5b90f2aa66.imgix.net/sandbox/Lot_4.png?auto=format&fit=crop&w=1200&q=100",
+                physique: 36.0,
+                delai: 90.0,
+                finance: 39.95,
+                facture: "6,64 Mds FCFA décaissés",
+                paye: "Sur 13,12 Mds FCFA de marché total",
+                contrat: "Contrat initial avec SOROUBAT résilié en nov 2022. Marché d'achèvement attribué à ESICO BTP en juin 2023 pour 13.12 Milliards FCFA.",
+                difficultes: [
+                    "Travaux totalement à l'arrêt depuis une attaque sécuritaire le 19 novembre 2024.",
+                    "Repli systématique du matériel lourd de terrassement hors de la zone d'intervention.",
+                    "Blocage des demandes de décaissements au niveau de la BID pour des raisons de dette souveraine."
+                ],
+                solutions: [
+                    "Inclusion prioritaire de l'axe de la déviation RN1 dans le périmètre du nouveau dispositif de sécurisation FDS de 2026."
+                ]
+            },
+            moe_lot2: {
+                title: "MOE Lot 1 & 2 : Contrôle et Supervision (Cabinet EIPL)",
+                entreprise: "Energy Infratech PVT.LTD (EIPL)",
+                moe: "EIPL",
+                statusBadge: "bg-brand-50 text-brand-700 border-brand-200",
+                statusTxt: "Contrat en Renégociation",
+                img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=100",
+                physique: 25.0,
+                delai: 80.0,
+                finance: 22.5,
+                facture: "Arriérés de 306,8 Millions FCFA",
+                paye: "Gap de 7.71 M$ suite clôture BID",
+                contrat: "Marché initial de 72 mois. Le financement BID d'origine s'est clôturé en mars 2024, provoquant un lourd déficit.",
+                difficultes: [
+                    "Clôture du prêt BID. L'Etat du Niger n'a payé que 3.59% de sa part (11 Millions sur 306 Millions d'arriérés accumulés).",
+                    "Contrat initial souffrant de faiblesses (manque de personnel permanent HSE, faible rémunération locale)."
+                ],
+                solutions: [
+                    "La BID a accordé son Avis de Non Objection (ANO) en août 2025 pour un nouveau contrat de gré à gré imputé sur le reliquat du Lot 3.",
+                    "L'avance de démarrage non amortie a été apurée via le stock d'arriérés par un montage exceptionnel.",
+                    "Le projet de contrat finalisé a été transmis à la BID le 03 avril 2026 (ANO en attente)."
+                ]
+            },
+            moe_lot3: {
+                title: "MOE Lot 3 : Contrôle Ligne HT et Postes (Feedback)",
+                entreprise: "PT Feedback Infra / GTAH",
+                moe: "Feedback",
+                statusBadge: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                statusTxt: "Mobilisation Restreinte",
+                img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=100",
+                physique: 60.0,
+                delai: 85.0,
+                finance: 50.0,
+                facture: "Factures en instance : 159 746 USD",
+                paye: "Impayés sous financement BID",
+                contrat: "Contrat initial de 49 mois. Négociation en cours d'un nouveau contrat d'extension de 43 mois.",
+                difficultes: [
+                    "Retards de paiements récurrents. Conséquence : démobilisation de l'équipe. Seul le Chef de Mission est sur site en 2026."
+                ],
+                solutions: [
+                    "Extension de 43 mois pour s'aligner sur le nouveau calendrier des travaux et couvrir entièrement la période de garantie de la ligne HT."
+                ]
+            }
+        };
+
+        // DONNEES COMPOSANTES
+        const dataComposantes = {
+            c4: {
+                title: "Composante 4 : Gestion du programme et Suivi & Évaluation",
+                desc: "Réforme institutionnelle et appui technique à l'ABK. Au 30 septembre 2025, sur 55 postes prévus, 38 cadres et experts ont été recrutés (69%), complétés en mars 2026 par 18 nouveaux spécialistes Bac+5, portant le taux de remplissage à plus de 85%. Financé conjointement par BM, BAD, BOAD et BID. Un audit organisationnel, des fiches de postes KPI et un bilan de compétences ont été finalisés en avril 2026 par le cabinet Groupement Faucon & Talents.",
+                stats: ["47 Experts Recrutés (85%)", "100% Audits Conformes", "Fiches Postes KPI 2026"]
+            }
+        };
+
+        // DONNEES PAR ENRICHIES
+        const dataPAR = {
+            pges: {
+                title: "Sous-composante : Plan de Gestion Environnementale et Sociale (PGES)",
+                desc: "Mesures de sauvegarde environnementale pour la vallée du Niger. Intègre des actions de protection des berges, de déboisement de la retenue, et de gestion adaptative au changement climatique (P_KRESMIN).",
+                actions: [
+                    "Actualisation de l'EIES finalisée et validée lors des ateliers de mi-2025.",
+                    "Mise en place de corridors de migration préservés pour la faune (réserve des hippopotames).",
+                    "Suivi de la qualité de l'eau et surveillance épidémiologique stricte autour des bases vies.",
+                    "Vague 1 (PAR1) : 4 activités clés totalement achevées (AEP, Électrification, Latrines, Plantations d'alignement)."
+                ]
+            },
+            par_reinstallation: {
+                title: "Sous-composante : Plan d’Action de Réinstallation (PAR 2)",
+                desc: "Programme critique d'indemnisation et de déplacement des ménages de la zone du futur réservoir (Vague 2). Doté de 436 M USD mobilisés lors de la table ronde de 2018, ce volet détermine le chemin critique de la mise en eau.",
+                actions: [
+                    "Vague 2 : Études APD d'aménagement engagées avec STUDI sur 6 sites prioritaires (Kandadji 2, Seno-Farey, Issilé, Garey, Abouja, Daya).",
+                    "Validation d'un Coefficient d'Occupation du Sol (COS) de 30% pour les habitations, avec des logements à performance thermique optimisée.",
+                    "Reprise des enquêtes socio-économiques par SOFRECO en mars 2026 suite aux ratissages post-suspensions.",
+                    "Négociations directes entamées avec le cabinet AGECRHAU pour accélérer les plans de lotissement des 11 autres sites."
+                ]
+            }
+        };
+
+        // DONNEES POLE DE CROISSANCE ENRICHIES
+        const dataPole = {
+            irrigation: {
+                title: "Sous-composante : Pôle de croissance centré sur l’irrigation",
+                desc: "Création d'un schéma directeur d'aménagement de 45 000 hectares dans la vallée du Niger, assurant l'autosuffisance alimentaire et garantissant un débit minimum du fleuve de 120 m³/s à Niamey.",
+                actions: [
+                    "Phase 3 (20 000 ha) : Livrables des études APD/DAO validés et consolidés début 2026 après des levés géotechniques complets.",
+                    "Périmètre de Bonféba (350 ha) : Travaux achevés (réception définitive actée) et accompagnement direct de 458 femmes maraîchères assuré par l'ONAHA.",
+                    "Périmètres féminins de Kandadji/Sanguilé (108 ha) : Extension en cours, avec DAO finalisé et marché attribué par entente directe en 2026.",
+                    "Pilotage 1 500 ha : Nouveau financement de 650 Millions FCFA validé par la BOAD pour lancer les études de la tranche agro-alimentaire pilote."
+                ]
+            },
+            developpement: {
+                title: "Sous-composante : Développement Local (PDLK & FIL)",
+                desc: "Fonds d'Investissement Local (FIL) soutenant les communautés. Le PDLK (Programme de Développement Local Kandadji) est déployé sur le terrain par un consortium d'ONG (ABC, CDR, ONGERNA, FFA).",
+                actions: [
+                    "Création opérationnelle des Comités d'Analyse (CDAP) à Tillabéri, Téra, Banguilaré et Ayorou (fin 2025).",
+                    "PTBA 2022 & 2024 : 82 micro-projets initiaux validés (4,88 Milliards FCFA). Le financement des reliquats a bondi de 10% début 2024.",
+                    "Réalisations 2026 : Construction de la maternité de Wanzerbé (70%), du CSI de Bibiyergou, et de magasins de 200 tonnes.",
+                    "Formations massives (T1 2026) : 100 femmes étuveuses de riz formées, 100 mareyeuses formées au programme GERME, et dotation de kits de pêche."
+                ]
+            }
+        };
+
+        // GESTION DU RECHARGEMENT DES ONGLETS
+        function switchTab(tabId) {
+            const tabs = ['composantes', 'analytics', 'lots', 'par', 'pole', 'bailleur'];
+            tabs.forEach(t => {
+                const content = document.getElementById(`tab-content-${t}`);
+                if (content) content.classList.add('hidden');
+                const btn = document.getElementById(`nav-${t}`);
+                if (btn) {
+                    btn.classList.remove('tab-btn-active');
+                    btn.classList.add('text-slate-600', 'hover:text-brand-600');
+                }
+            });
+
+            const activeContent = document.getElementById(`tab-content-${tabId}`);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+                activeContent.classList.remove('animate-fade-in-up');
+                void activeContent.offsetWidth; // Trigger reflow
+                activeContent.classList.add('animate-fade-in-up');
+            }
+            
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('tab-btn-active');
+                activeBtn.classList.remove('text-slate-600', 'hover:text-brand-600');
+            }
+        }
+
+        // FONCTIONS REPLI/DEPLI DES SYNTHESES DE SECTIONS
+        function collapseLotsSummary() {
+            const wrapper = document.getElementById('lots-summary-wrapper');
+            const banner = document.getElementById('lots-summary-toggle-banner');
+            if (wrapper) wrapper.classList.add('collapsed');
+            if (banner) banner.classList.remove('hidden');
+        }
+
+        function expandLotsSummary() {
+            const wrapper = document.getElementById('lots-summary-wrapper');
+            const banner = document.getElementById('lots-summary-toggle-banner');
+            if (wrapper) wrapper.classList.remove('collapsed');
+            if (banner) banner.classList.add('hidden');
+        }
+
+        function toggleLotsSummary() {
+            const wrapper = document.getElementById('lots-summary-wrapper');
+            if (wrapper && wrapper.classList.contains('collapsed')) {
+                expandLotsSummary();
+            } else {
+                collapseLotsSummary();
+            }
+        }
+
+        function collapseParSummary() {
+            const wrapper = document.getElementById('par-summary-wrapper');
+            const banner = document.getElementById('par-summary-toggle-banner');
+            if (wrapper) wrapper.classList.add('collapsed');
+            if (banner) banner.classList.remove('hidden');
+        }
+
+        function expandParSummary() {
+            const wrapper = document.getElementById('par-summary-wrapper');
+            const banner = document.getElementById('par-summary-toggle-banner');
+            if (wrapper) wrapper.classList.remove('collapsed');
+            if (banner) banner.classList.add('hidden');
+        }
+
+        function toggleParSummary() {
+            const wrapper = document.getElementById('par-summary-wrapper');
+            if (wrapper && wrapper.classList.contains('collapsed')) {
+                expandParSummary();
+            } else {
+                collapseParSummary();
+            }
+        }
+
+        function collapsePoleSummary() {
+            const wrapper = document.getElementById('pole-summary-wrapper');
+            const banner = document.getElementById('pole-summary-toggle-banner');
+            if (wrapper) wrapper.classList.add('collapsed');
+            if (banner) banner.classList.remove('hidden');
+        }
+
+        function expandPoleSummary() {
+            const wrapper = document.getElementById('pole-summary-wrapper');
+            const banner = document.getElementById('pole-summary-toggle-banner');
+            if (wrapper) wrapper.classList.remove('collapsed');
+            if (banner) banner.classList.add('hidden');
+        }
+
+        function togglePoleSummary() {
+            const wrapper = document.getElementById('pole-summary-wrapper');
+            if (wrapper && wrapper.classList.contains('collapsed')) {
+                expandPoleSummary();
+            } else {
+                collapsePoleSummary();
+            }
+        }
+
+        // AFFICHER / MASQUER LA BANNIÈRE
+        function toggleQuickSummary() {
+            const banner = document.getElementById('quick-summary-banner');
+            banner.classList.toggle('hidden');
+        }
+
+        // SELECTIONNER ET RENDRE UN LOT
+        function selectLot(lotKey) {
+            // Réduire la section synthèse au clic sur un lot
+            collapseLotsSummary();
+
+            const lot = dataLots[lotKey];
+            const container = document.getElementById('lot-detail-container');
+            container.classList.remove('hidden');
+
+            // Style des boutons
+            ['lot1', 'lot2', 'lot3', 'lot4', 'moe_lot2', 'moe_lot3'].forEach(k => {
+                const b = document.getElementById(`lot-btn-${k}`);
+                if(b) b.classList.remove('lot-card-active');
+            });
+            const selectedBtn = document.getElementById(`lot-btn-${lotKey}`);
+            if(selectedBtn) selectedBtn.classList.add('lot-card-active');
+
+            container.classList.remove('animate-fade-in-up');
+            void container.offsetWidth; // trigger reflow
+            container.classList.add('animate-fade-in-up');
+
+            container.innerHTML = `
+                <div class="glass-card rounded-2xl overflow-hidden border-slate-200 space-y-6 bg-white shadow-sm">
+                    <div class="relative h-48 md:h-60 w-full overflow-hidden">
+                        <img src="${lot.img}" alt="${lot.title}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-6">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                                <div>
+                                    <span class="text-xs uppercase font-extrabold text-brand-300 tracking-wider">Fiche Technique & Financière</span>
+                                    <h2 class="text-xl md:text-2xl font-black text-white">${lot.title}</h2>
+                                    <p class="text-xs text-slate-200 mt-1">Entreprise : <strong class="text-white">${lot.entreprise}</strong> | MOE : <strong class="text-white">${lot.moe}</strong></p>
+                                </div>
+                                <span class="inline-flex px-3.5 py-1 rounded-full text-xs font-bold ${lot.statusBadge} self-start md:self-auto border shadow-sm">
+                                    ${lot.statusTxt}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-6 pt-0">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-xl">
+                                <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Avancement Physique</span>
+                                <div class="text-2xl font-black text-brand-600 mt-1">${lot.physique}%</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2 mt-2">
+                                    <div class="bg-brand-500 h-2 rounded-full transition-all duration-700" style="width: ${lot.physique}%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-xl">
+                                <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Délai Consommé</span>
+                                <div class="text-2xl font-black text-amber-600 mt-1">${lot.delai}%</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2 mt-2">
+                                    <div class="bg-amber-500 h-2 rounded-full transition-all duration-700" style="width: ${lot.delai}%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-xl">
+                                <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Exécution Financière</span>
+                                <div class="text-2xl font-black text-emerald-600 mt-1">${lot.finance}%</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2 mt-2">
+                                    <div class="bg-emerald-500 h-2 rounded-full transition-all duration-700" style="width: ${lot.finance}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50/70 p-4 rounded-xl border border-slate-200 text-xs">
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1.5 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-file-signature text-brand-600"></i> Cadre Contractuel & Calendrier
+                                </h4>
+                                <p class="text-slate-600 leading-relaxed">${lot.contrat}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1.5 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-wallet text-emerald-600"></i> Situation des Décaissements
+                                </h4>
+                                <p class="text-slate-600"><strong>Montant Facturé :</strong> ${lot.facture}</p>
+                                <p class="text-slate-600 mt-1"><strong>Décaissement Effectif :</strong> ${lot.paye}</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-red-50/50 border border-red-200 p-4 rounded-xl space-y-3">
+                                <h4 class="font-bold text-red-800 text-xs flex items-center gap-2 border-b border-red-200/80 pb-2">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i> Contraintes & Problématiques Majeures
+                                </h4>
+                                <ul class="space-y-2 text-xs text-slate-700">
+                                    ${lot.difficultes.map(d => `<li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i><span>${d}</span></li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="bg-emerald-50/50 border border-emerald-200 p-4 rounded-xl space-y-3">
+                                <h4 class="font-bold text-emerald-800 text-xs flex items-center gap-2 border-b border-emerald-200/80 pb-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Dispositions & Plan de Résolution Conjoint
+                                </h4>
+                                <ul class="space-y-2 text-xs text-slate-700">
+                                    ${lot.solutions.map(s => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i><span>${s}</span></li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Défilement doux vers le contenu affiché
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // SELECTIONNER C4
+        function selectComposante(compId) {
+            const comp = dataComposantes[compId];
+            const container = document.getElementById('composante-detail-container');
+            container.classList.remove('hidden');
+
+            container.classList.remove('animate-fade-in-up');
+            void container.offsetWidth; // trigger reflow
+            container.classList.add('animate-fade-in-up');
+
+            container.innerHTML = `
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-purple-600"></i> ${comp.title}
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">${comp.desc}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                        ${comp.stats.map(s => `
+                            <div class="bg-slate-50 border border-slate-200/80 p-3 rounded-xl text-center font-bold text-xs text-purple-700 shadow-xs">
+                                ${s}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // SELECTIONNER SOUS-COMPOSANTE PAR
+        function selectSubPar(subKey) {
+            // Réduire la section synthèse au clic sur une sous-composante
+            collapseParSummary();
+
+            const item = dataPAR[subKey];
+            const container = document.getElementById('par-detail-container');
+            container.classList.remove('hidden');
+
+            ['pges', 'par_reinstallation'].forEach(k => {
+                const b = document.getElementById(`par-sub-${k}`);
+                if(b) b.classList.remove('subtab-active', 'border-emerald-500', 'bg-emerald-50/40', 'border-amber-500', 'bg-amber-50/40');
+            });
+            const selectedBtn = document.getElementById(`par-sub-${subKey}`);
+            if(selectedBtn) {
+                selectedBtn.classList.add('subtab-active');
+                if(subKey === 'pges') selectedBtn.classList.add('border-emerald-500', 'bg-emerald-50/40');
+                else selectedBtn.classList.add('border-amber-500', 'bg-amber-50/40');
+            }
+
+            container.classList.remove('animate-fade-in-up');
+            void container.offsetWidth; // trigger reflow
+            container.classList.add('animate-fade-in-up');
+
+            container.innerHTML = `
+                <div class="glass-card rounded-2xl p-6 border-slate-200 space-y-4 bg-white shadow-sm">
+                    <h3 class="text-base font-bold text-slate-900">${item.title}</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">${item.desc}</p>
+                    <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-xl space-y-2">
+                        <h4 class="font-bold text-xs text-slate-800 uppercase tracking-wider mb-2">Actions Stratégiques & Avancement</h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            ${item.actions.map(a => `<li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-600 mt-0.5"></i><span>${a}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // SELECTIONNER SOUS-COMPOSANTE POLE
+        function selectSubPole(subKey) {
+            // Réduire la section synthèse au clic sur une sous-composante
+            collapsePoleSummary();
+
+            const item = dataPole[subKey];
+            const container = document.getElementById('pole-detail-container');
+            container.classList.remove('hidden');
+
+            ['irrigation', 'developpement'].forEach(k => {
+                const b = document.getElementById(`pole-sub-${k}`);
+                if(b) b.classList.remove('subtab-active', 'border-brand-500', 'bg-brand-50/40', 'border-purple-500', 'bg-purple-50/40');
+            });
+            const selectedBtn = document.getElementById(`pole-sub-${subKey}`);
+            if(selectedBtn) {
+                selectedBtn.classList.add('subtab-active');
+                if(subKey === 'irrigation') selectedBtn.classList.add('border-brand-500', 'bg-brand-50/40');
+                else selectedBtn.classList.add('border-purple-500', 'bg-purple-50/40');
+            }
+
+            container.classList.remove('animate-fade-in-up');
+            void container.offsetWidth; // trigger reflow
+            container.classList.add('animate-fade-in-up');
+
+            container.innerHTML = `
+                <div class="glass-card rounded-2xl p-6 border-slate-200 space-y-4 bg-white shadow-sm">
+                    <h3 class="text-base font-bold text-slate-900">${item.title}</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">${item.desc}</p>
+                    <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-xl space-y-2">
+                        <h4 class="font-bold text-xs text-slate-800 uppercase tracking-wider mb-2">Actions Stratégiques & Avancement</h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            ${item.actions.map(a => `<li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-600 mt-0.5"></i><span>${a}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // INITIALISATION CHARTS.JS
+        function initCharts() {
+            // CHART 1: Lots existants
+            const ctxLots = document.getElementById('lotsChart').getContext('2d');
+            new Chart(ctxLots, {
+                type: 'bar',
+                data: {
+                    labels: ['Lot 1 (Génie Civil)', 'Lot 2 (Centrale)', 'Lot 3 (Ligne HT)', 'Lot 4 (RN1 Route)'],
+                    datasets: [
+                        {
+                            label: 'Avancement Physique (%)',
+                            data: [30.5, 17.3, 51.6, 36.0],
+                            backgroundColor: '#0284c7',
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Exécution Financière (%)',
+                            data: [32.4, 20.0, 47.3, 39.9],
+                            backgroundColor: '#10b981',
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#475569',
+                                font: { size: 11, weight: '600' }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#64748b', font: { size: 10 } },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { color: '#64748b', font: { size: 10 } },
+                            grid: { color: '#f1f5f9' }
+                        }
+                    }
+                }
+            });
+
+            // CHART 2: Répartition du Budget (Doughnut)
+            const ctxBudget = document.getElementById('budgetChart').getContext('2d');
+            new Chart(ctxBudget, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Banque Mondiale', 'BAD', 'BID', 'OPEC/BOAD', 'État du Niger'],
+                    datasets: [{
+                        data: [30.5, 25.1, 18.2, 16.2, 10.0],
+                        backgroundColor: [
+                            '#0ea5e9', // sky
+                            '#10b981', // emerald
+                            '#f59e0b', // amber
+                            '#8b5cf6', // violet
+                            '#64748b'  // slate
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#475569', font: { size: 10, weight: '500' }, boxWidth: 10, padding: 10 }
+                        }
+                    }
+                }
+            });
+
+            // CHART 3: Evolution Courbe S (Line)
+            const ctxEvol = document.getElementById('evolutionChart').getContext('2d');
+            new Chart(ctxEvol, {
+                type: 'line',
+                data: {
+                    labels: ['2021', '2022', '2023', '2024', '2025', '2026'],
+                    datasets: [
+                        {
+                            label: 'Prévisions',
+                            data: [150, 300, 450, 600, 750, 916],
+                            borderColor: '#cbd5e1',
+                            backgroundColor: 'transparent',
+                            borderDash: [5, 5],
+                            tension: 0.4,
+                            pointRadius: 2
+                        },
+                        {
+                            label: 'Réalisations',
+                            data: [120, 250, 300, 305, 310, 328],
+                            borderColor: '#0284c7',
+                            backgroundColor: 'rgba(2, 132, 199, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#0284c7',
+                            pointRadius: 3,
+                            pointHoverRadius: 5
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#475569', font: { size: 10, weight: '500' }, boxWidth: 10 } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { display: false } },
+                        y: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#f1f5f9' } }
+                    }
+                }
+            });
+
+            // CHART 4: Emplois (Histogramme Empilé)
+            const ctxHr = document.getElementById('hrChart');
+            if (ctxHr) {
+                new Chart(ctxHr.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Lot 1', 'Lot 2', 'Lot 3', 'Lot 4'],
+                        datasets: [
+                            {
+                                label: 'Locaux',
+                                data: [1500, 250, 400, 300],
+                                backgroundColor: '#10b981',
+                                borderRadius: 2
+                            },
+                            {
+                                label: 'Expatriés',
+                                data: [450, 100, 60, 20],
+                                backgroundColor: '#d97706',
+                                borderRadius: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { color: '#475569', font: { size: 10, weight: '500' }, boxWidth: 10 } }
+                        },
+                        scales: {
+                            x: { stacked: true, ticks: { color: '#64748b', font: { size: 9 } }, grid: { display: false } },
+                            y: { stacked: true, ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: '#f1f5f9' } }
+                        }
+                    }
+                });
+            }
+
+            // NOUVEAU CHART: Statut des Micro-Projets PTBA 2025 (Bar Chart)
+            const ctxMicro = document.getElementById('microProjetsChart');
+            if (ctxMicro) {
+                new Chart(ctxMicro.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Attente CDAP', 'En Révision', 'Passation Marché', 'Transmission'],
+                        datasets: [{
+                            label: 'Nombre de Micro-Projets (PTBA 2025)',
+                            data: [27, 18, 10, 3],
+                            backgroundColor: [
+                                '#f59e0b', // amber
+                                '#ef4444', // red
+                                '#10b981', // emerald
+                                '#3b82f6'  // blue
+                            ],
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#475569', font: { size: 10, weight: '500' } }, grid: { display: false } },
+                            y: { beginAtZero: true, ticks: { stepSize: 5, color: '#94a3b8', font: { size: 10 } }, grid: { color: '#f1f5f9' } }
+                        }
+                    }
+                });
+            }
+
+            // NOUVEAU CHART: Répartition Financement PAR 2A (Pie Chart)
+            const ctxPar2a = document.getElementById('par2aFundingChart');
+            if (ctxPar2a) {
+                new Chart(ctxPar2a.getContext('2d'), {
+                    type: 'pie',
+                    data: {
+                        labels: ['Approuvés (BAD, BM, BOAD)', 'Annoncés (AFD, BADEA, FSD)'],
+                        datasets: [{
+                            data: [327.33, 105.46],
+                            backgroundColor: ['#10b981', '#f59e0b'],
+                            borderWidth: 3,
+                            borderColor: '#ffffff',
+                            hoverOffset: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { 
+                                position: 'bottom', 
+                                labels: { color: '#475569', font: { size: 11, weight: '600' }, padding: 20, boxWidth: 12 } 
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed !== null) { label += context.parsed + ' Millions $'; }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // NOUVEAU CHART: Statut PAR 1 (Doughnut Chart)
+            const ctxPar1 = document.getElementById('par1ActivityChart');
+            if (ctxPar1) {
+                new Chart(ctxPar1.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Activités Achevées', 'Activités en Cours d\'Exécution'],
+                        datasets: [{
+                            data: [4, 6],
+                            backgroundColor: ['#10b981', '#f59e0b'],
+                            borderWidth: 2,
+                            borderColor: '#ffffff',
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return ' ' + context.label + ' : ' + context.parsed;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // NOUVEAU CHART: Analyse des Délais Lots (Bar Chart)
+            const ctxLotsDelay = document.getElementById('lotsDelayChart');
+            if (ctxLotsDelay) {
+                new Chart(ctxLotsDelay.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Lot 1 (Génie Civil)', 'Lot 2 (Centrale)', 'Lot 3 (Ligne HT)', 'Lot 4 (Déviation)'],
+                        datasets: [
+                            {
+                                label: 'Délai Consommé (%)',
+                                data: [88.89, 86.67, 87.0, 90.0],
+                                backgroundColor: '#f43f5e', // rose/red
+                                borderRadius: 4
+                            },
+                            {
+                                label: 'Avancement Physique (%)',
+                                data: [30.5, 17.3, 51.62, 36.0],
+                                backgroundColor: '#10b981', // emerald
+                                borderRadius: 4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'top', labels: { color: '#475569', font: { size: 11, weight: '600' } } }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { display: false } },
+                            y: { max: 100, ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#f1f5f9' } }
+                        }
+                    }
+                });
+            }
+
+            // NOUVEAU CHART: Appui Vulnérable PAR 1 (Pie Chart)
+            const ctxParVul = document.getElementById('parVulnerableChart');
+            if (ctxParVul) {
+                new Chart(ctxParVul.getContext('2d'), {
+                    type: 'pie',
+                    data: {
+                        labels: ['Ménages (Alimentaire)', 'Ménages (Cash)', 'Kits Micro-projets'],
+                        datasets: [{
+                            data: [246, 247, 493],
+                            backgroundColor: ['#10b981', '#0ea5e9', '#f59e0b'],
+                            borderWidth: 2,
+                            borderColor: '#ffffff',
+                            hoverOffset: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+            }
+
+            // NOUVEAU CHART: Evolution PTBA (Line Chart)
+            const ctxPtbaEvol = document.getElementById('ptbaEvolutionChart');
+            if (ctxPtbaEvol) {
+                new Chart(ctxPtbaEvol.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['PTBA 2022', 'PTBA 2024', 'PTBA 2025'],
+                        datasets: [{
+                            label: 'Nombre de Micro-Projets',
+                            data: [82, 64, 58],
+                            borderColor: '#0284c7',
+                            backgroundColor: 'rgba(2, 132, 199, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointBackgroundColor: '#0284c7',
+                            pointRadius: 4,
+                            pointHoverRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { display: false } },
+                            y: { beginAtZero: true, max: 100, ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: '#f1f5f9' } }
+                        }
+                    }
+                });
+            }
+        }
+
+        // GESTION DU MODAL CARTE (ZOOM)
+        function openMapModal(imgSrc) {
+            const modal = document.getElementById('map-modal');
+            const modalImg = document.getElementById('map-modal-img');
+            const modalContent = document.getElementById('map-modal-content');
+            
+            modalImg.src = imgSrc;
+            modal.classList.remove('hidden');
+            
+            // Délai pour permettre la transition CSS
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            });
+        }
+
+        function closeMapModal() {
+            const modal = document.getElementById('map-modal');
+            const modalContent = document.getElementById('map-modal-content');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Correspond à la durée duration-300 de Tailwind
+        }
+
+        // CHARGEMENT INITIAL
+        window.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            switchTab('composantes');
+        });
+
+        // ================= LOGIQUE DU CHATBOT INTELLIGENT =================
+
+        // BASE DE CONNAISSANCES SYNTHÉTIQUE POUR L'IA (EXTRAITE DES TEXTES DU DEBORD)
+        function getKandadjiKnowledgeBase() {
+            return `
+CONTEXTE GLOBAL PROGRAMME KANDADJI (P_KRESMIN):
+- Tutelle: Présidence de la République du Niger. Agence du Barrage de Kandadji (ABK).
+- Budget réactualisé: 916.19 Milliards FCFA (100% engagé auprès de 11 Bailleurs de Fonds).
+- Objectifs: Barrage réservoir, centrale hydroélectrique de 130 MW (629 GWh/an), aménagement de 45 000 hectares irrigués, débit minimum fleuve garanti à 120 m³/s à Niamey, impact sur 3.7 millions de bénéficiaires (Tillabéri/Niamey).
+- Date cible de relance des travaux sur site: 01 Juin 2026 (Mission conjointe PTF / Premier Ministre d'Avril 2026). Sécurisation FDS activée.
+- Horizon d'achèvement cible (Planning IX-A de CGGC): 31 Décembre 2030.
+
+COMPOSANTE 1 & SUIVI DES LOTS:
+- Lot 1 (Génie Civil du Barrage & Hydromécanique) : CGGC / MOE Tractebel-Coyne&Bellier. Avancement physique: 30.50%, Délai consommé: 88.89%, Financement exécuté: 32.40%. Suspendu depuis le 8 août 2023 pour force majeure. Clôture prêt BID (gap 77%). Échéance contractuelle prorogée au 26/03/2027. Saisie fiscale DGI de 1.145 Md FCFA. Reprise au 1er juin 2026 sous réserve de sécurité FDS et réalignement financier.
+- Lot 2 (Centrale Hydroélectrique 130 MW) : Groupement CGGC/ZHEFU / MOE EIPL. Avancement physique: 17.30%, Délai consommé: 86.67%, Exécution financière: 20.00%. Inactif car dépendant du Lot 1. Reprise à 100% par la Banque Mondiale (IDA) de la quote-part initialement prévue par l'AFD (39.87M$). Essais validés sur modèle réduit turbine Kaplan.
+- Lot 3 (Ligne HT 132kV Kandadji-Niamey & Postes) : KALPATARU / MOE Feedback. Avancement physique: 51.62%, Délai consommé: 87.00%, Exécution financière: 47.32%. Asymétrie: Ligne avancée à 83.3%, mais poste d'arrivée à 0%. Déplacement du poste vers Bangoula et révision EIES/PAR validées début 2026. Prolongation de 26 mois visée (30 sept 2027).
+- Lot 4 (Déviation Route RN1-W) : ESICO BTP / MOE Direction Routes. Avancement physique: 36.00%, Délai consommé: 90.00%, Exécution financière: 39.95%. Arrêt sécuritaire suite à une attaque le 19 nov 2024. Sécurisation FDS incluse pour la reprise 2026.
+- MOE Lot 1 & 2 (EIPL) : Arriérés de 306.8 MF CFA. Nouveau contrat de gré à gré de 7.71M$ visé sur le reliquat du Lot 3 (ANO BID transmis en avril 2026).
+- MOE Lot 3 (Feedback) : Factures en instance (159k$). Extension de 43 mois négociée pour s'aligner sur le nouveau planning.
+
+COMPOSANTE 2 (PGES & PAR) :
+- PGES (Environnement) : EIES actualisée et validée mid-2025. Protection faune (hippopotames). Vague 1 (PAR1) : 4 activités d'eau, électricité, latrines et plantations 100% achevées.
+- PAR (Réinstallation Vague 2) : Mobilisation de 436M$ (Abidjan 2018). APD engagés avec STUDI sur 6 sites prioritaires (Kandadji 2, Seno-Farey, Issilé, Garey, Abouja, Daya) avec COS de 30%. SOFRECO a repris les enquêtes socio-économiques en mars 2026.
+- Appui aux Vulnérables PAR 1 : Reliquat de 53MF CFA mobilisé (246 ménages appui alimentaire, 247 ménages cash, 493 kits micro-projets).
+- Financement PAR 2A : 327.33M$ approuvés (BM 189M$, BAD 53.77M$, BOAD 26M$). Gap de 216.61M$ (annonces AFD/BADEA non concrétisées 105.4M$, fonds BIDC compromis par le retrait de la CEDEAO 25.1M$, surcoûts études/indemnisations).
+
+COMPOSANTE 3 (POLE DE CROISSANCE & IRRIGATION) :
+- Schéma 20 000 ha (Phase 3) : Dossiers APD/DAO validés par lots (Lot 1, Lot 2, Lot 3) transmis à la BM et la DGGR fin 2025/avril 2026.
+- Périmètre de Bonféba (350 ha) : Travaux achevés, réception faite, 458 femmes maraîchères accompagnées par ONAHA.
+- Périmètres féminins Kandadji/Sanguilé (108 ha) : Extension attribuée de gré à gré en 2026.
+- Micro-projets (FIL / PDLK) : PTBA 2022 (82 projets, 4.88 Mds FCFA). PTBA 2024 (64 projets, +10.24% budget). 58 projets PTBA 2025 en cours d'approbation CDAP.
+- Chantiers 2026 : Maternité Wanzerbé (70%), Magasin Bankilaré (80%), Réhabilitation Mairie Bibiyergou (70%). Formations de 100 femmes étuveuses de riz et 100 mareyeuses.
+
+COMPOSANTE 4 (GESTION ABK) & BAILLEURS :
+- Effectifs ABK : 38 experts recrutés sur 55 prévus (69%), complétés en mars 2026 par 18 spécialistes (taux effectif > 85%). Audits organisationnels et fiches KPI finalisées par Faucon & Talents en avril 2026.
+- 11 Bailleurs de fonds : BAD (Chef de file PTF, Lot 1), Banque Mondiale (IDA, Lot 2 à 100% et PAR), BID (Lot 3 et RN1, négociations déblocage suspension en cours), BOAD, BADEA, OPEC Fund, FKDEA, État du Niger (Contrepartie & Sécurité FDS).
+            `;
+        }
+
         function toggleChatbot() {
-            const modal = document.getElementById('chatbot-modal');
-            modal.classList.toggle('translate-x-full');
-            if (!modal.classList.contains('translate-x-full')) {
+            const win = document.getElementById('chatbot-window');
+            win.classList.toggle('hidden');
+            if(!win.classList.contains('hidden')) {
                 document.getElementById('chat-input').focus();
             }
         }
 
-        function handleChatKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendChatMessage();
-            }
+        function askQuickQuestion(q) {
+            document.getElementById('chat-input').value = q;
+            handleChatSubmit(new Event('submit'));
         }
 
-        function sendQuickQuery(text) {
-            document.getElementById('chat-input').value = text;
-            sendChatMessage();
-        }
-
-        // NAVIGATION AUTOMATIQUE CLIQUE-ET-REDIRECTION DEPUIS LE CHATBOT
-        function navigateFromChat(type, target) {
-            toggleChatbot();
-            if (type === 'tab') {
-                switchTab(target);
-            } else if (type === 'lot') {
-                switchTab('lots');
-                setTimeout(() => selectLot(target), 200);
-            } else if (type === 'par') {
-                switchTab('par');
-                setTimeout(() => selectSubPar(target), 200);
-            } else if (type === 'pole') {
-                switchTab('pole');
-                setTimeout(() => selectSubPole(target), 200);
-            } else if (type === 'c4') {
-                switchTab('composantes');
-                setTimeout(() => selectComposante('c4'), 200);
-            }
-        }
-
-        // CONTEXTE COMPLET SYSTEME POUR GEMINI
-        function getKandadjiSystemContext() {
-            return `
-Tu es l'assistant virtuel intelligent officiel du Programme Kandadji (P_KRESMIN / Agence du Barrage de Kandadji - Présidence du Niger).
-Tu réponds précisément aux questions en utilisant la base de connaissances certifiée ci-dessous :
-
-DONNÉES DU PROGRAMME :
-- Budget global réactualisé : 916,19 Mds FCFA (100% engagé par 11 Bailleurs de fonds : BM/IDA, BAD, BID, BOAD, BADEA, FKDEA, OPEC Fund, État du Niger, etc.).
-- Objectifs : Barrage de régulation, centrale hydroélectrique 130 MW (629 GWh/an), ligne HT 132 kV vers Niamey, pôle agricole de 45 000 ha (débit garanti 120 m³/s à Niamey), 3,7 millions de bénéficiaires.
-- Reprise des travaux : Cible du 01 Juin 2026 actée avec les PTF et le Premier Ministre. Dispositif sécuritaire FDS activé.
-
-SITUATION DES LOTS :
-1. Lot 1 (Génie Civil Barrage - CGGC) : Avancement physique 30,5%, Délai 88,89%, Financier 32,4%. Suspendu le 08/08/2023. Horizon d'achèvement 2030 (Planning IX-A).
-2. Lot 2 (Centrale Hydro 130 MW - CGGC/ZHEFU) : Avancement 17,3%, Financier 20,0%. Restructuration BM (IDA) pour compenser le retrait de l'AFD (39,87M$).
-3. Lot 3 (Ligne HT 132kV - KALPATARU) : Avancement global 51,62% (Ligne à 83,3%, Poste Bangoula/Goroubanda à 0%). Prolongation au 30/09/2027.
-4. Lot 4 (Route RN1-W - ESICO BTP) : Avancement 36,0%, Financier 39,95%. Arrêt sécuritaire depuis fin 2024.
-5. MOE EIPL (Lots 1&2) : Arriérés 306,8M FCFA, nouveau contrat de gré à gré soumis à la BID en avril 2026.
-6. MOE Feedback (Lot 3) : Extension contractuelle de 43 mois.
-
-PAR & PGES (SOCIAL & ENVIRONNEMENT) :
-- PAR 1 : Repositionnement et indemnisation achevés. Appui vulnérables : 246 ménages aide alimentaire, 247 aide financière cash, 493 kits micro-projets.
-- PAR 2A (17 sites) : 327,3 M$ approuvés sur 433 M$ requis (Gap de 216,6 M$). Études APD par STUDI pour 6 sites prioritaires (COS 30%).
-
-PÔLE DE CROISSANCE & IRRIGATION :
-- Schéma 20 000 ha (Phase 3) : APD/DAO validés fin 2025 pour les 3 lots et transmis à la BM.
-- Périmètres Bonféba (350 ha) achevé (458 femmes). Périmètres Kandadji/Sanguilé (108 ha) attribués.
-- Micro-projets FIL/PDLK : PTBA 2022 (82 projets), PTBA 2024 (64 projets), PTBA 2025 (58 projets). Maternité Wanzerbé (70%), Magasin Bankilaré (80%).
-
-COMPOSANTE 4 (ABK) :
-- Recrutement : 47 experts/cadres (85% de couverture), audits et fiches de poste KPI finalisés en avril 2026.
-
-RÈGLE D'OR DE RÉPONSE :
-- Réponds clairement en français structuré.
-- Termine TOUJOURS par : "Source(s) dans l'application :" suivi des boutons HTML cliquables exacts ci-dessous :
-<button onclick="navigateFromChat('lot', 'lot1')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 1</button>
-<button onclick="navigateFromChat('lot', 'lot2')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 2</button>
-<button onclick="navigateFromChat('lot', 'lot3')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 3</button>
-<button onclick="navigateFromChat('lot', 'lot4')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 4</button>
-<button onclick="navigateFromChat('par', 'par_reinstallation')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Volet PAR 2</button>
-<button onclick="navigateFromChat('par', 'pges')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Volet PGES</button>
-<button onclick="navigateFromChat('pole', 'irrigation')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Irrigation 20 000 ha</button>
-<button onclick="navigateFromChat('pole', 'developpement')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Micro-Projets FIL</button>
-<button onclick="navigateFromChat('tab', 'bailleur')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Bailleurs & Financements</button>
-<button onclick="navigateFromChat('tab', 'analytics')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Analytics Consolidé</button>
-<button onclick="navigateFromChat('c4', 'c4')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Composante 4 (ABK)</button>
-`;
-        }
-
-        async function sendChatMessage() {
+        async function handleChatSubmit(e) {
+            e.preventDefault();
             const input = document.getElementById('chat-input');
             const query = input.value.trim();
-            if (!query) return;
+            if(!query) return;
 
-            const chatMessages = document.getElementById('chat-messages');
-            const loading = document.getElementById('chat-loading');
-
-            // 1. AFFICHER BULLE UTILISATEUR
-            const userBubble = document.createElement('div');
-            userBubble.className = 'flex items-start justify-end gap-2.5';
-            userBubble.innerHTML = `
-                <div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] text-xs">
-                    <p>${escapeHtml(query)}</p>
-                </div>
-                <div class="w-7 h-7 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-xs flex-shrink-0 font-bold">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-            `;
-            chatMessages.appendChild(userBubble);
+            // Afficher le message de l'utilisateur
+            appendChatMessage('user', query);
             input.value = '';
-            chatMessages.scrollTop = chatMessages.scrollHeight;
 
+            // Indicator loading
+            const loading = document.getElementById('chat-loading');
             loading.classList.remove('hidden');
 
             try {
-                // APPEL API GEMINI 3 FLASH
-                const apiKey = "";
+                // Appel de l'API Gemini 3 Flash via la clé de runtime canvas
+                const systemPrompt = `Tu es l'Assistant Virtuel officiel et expert du Programme Kandadji (P_KRESMIN) au Niger. 
+Ton rôle est de fournir des réponses synthétiques, structurées, courtoises et très précises à partir de la base de connaissances fournie ci-dessous.
+
+Règles de réponse :
+1. Réponds toujours en Français sous forme de synthèse claire (2 à 4 paragraphes courts ou puces).
+2. Fournis TOUJOURS la source exacte au sein de l'application à la fin de ta réponse sous la forme d'un format JSON explicite ou sous forme de mot-clé de référence parmi : [TAB:lots], [TAB:par], [TAB:pole], [TAB:analytics], [TAB:bailleur], [LOT:lot1], [LOT:lot2], [LOT:lot3], [LOT:lot4], [PAR:pges], [PAR:par_reinstallation], [POLE:irrigation], [POLE:developpement], [COMP:c4].
+3. Ne divulgue jamais de fausses informations. Bas-toi rigoureusement sur le contexte.
+
+BASE DE CONNAISSANCES DU PROJET :
+${getKandadjiKnowledgeBase()}`;
+
+                const apiKey = ""; // Canvas injectera dynamiquement la clé de runtime si disponible
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
                 const payload = {
                     contents: [{ parts: [{ text: query }] }],
-                    systemInstruction: { parts: [{ text: getKandadjiSystemContext() }] }
+                    systemInstruction: { parts: [{ text: systemPrompt }] }
                 };
 
-                let response = null;
-                let delay = 1000;
-                for (let attempt = 0; attempt < 3; attempt++) {
-                    try {
-                        response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                        if (response.ok) break;
-                    } catch (e) {}
-                    await new Promise(r => setTimeout(r, delay));
-                    delay *= 2;
-                }
-
-                if (!response || !response.ok) {
-                    throw new Error("Moteur Gemini non disponible en direct");
-                }
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
                 const result = await response.json();
-                const textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || generateComprehensiveFallback(query);
+                const textResponse = result?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-                // 2. AFFICHER LA RÉPONSE DE L'IA
-                const botBubble = document.createElement('div');
-                botBubble.className = 'flex items-start gap-2.5';
-                botBubble.innerHTML = `
-                    <div class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0 shadow-sm">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm space-y-2 max-w-[88%] text-slate-700 leading-relaxed">
-                        ${formatBotResponse(textResponse)}
-                    </div>
-                `;
-                chatMessages.appendChild(botBubble);
-
+                if (textResponse) {
+                    processAndAppendBotResponse(textResponse);
+                } else {
+                    fallbackBotResponse(query);
+                }
             } catch (err) {
-                // SECULATEUR : GENERATEUR INTELLIGENT DE SECOURS SANS PANNE
-                const fallbackText = generateComprehensiveFallback(query);
-                const botBubble = document.createElement('div');
-                botBubble.className = 'flex items-start gap-2.5';
-                botBubble.innerHTML = `
-                    <div class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0 shadow-sm">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm space-y-2 max-w-[88%] text-slate-700 leading-relaxed">
-                        ${fallbackText}
-                    </div>
-                `;
-                chatMessages.appendChild(botBubble);
+                console.warn('Erreur API Gemini, basculement en mode local:', err);
+                fallbackBotResponse(query);
             } finally {
                 loading.classList.add('hidden');
-                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
         }
 
-        function formatBotResponse(text) {
-            return text
+        // AJOUT DES MESSAGES AU TCHAT
+        function appendChatMessage(sender, text) {
+            const container = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'flex items-start gap-2.5 animate-fade-in-up';
+
+            if(sender === 'user') {
+                msgDiv.innerHTML = `
+                    <div class="ml-auto bg-brand-600 text-white rounded-2xl p-3 shadow-xs max-w-[85%] text-xs">
+                        <p>${escapeHtml(text)}</p>
+                    </div>
+                    <div class="w-7 h-7 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-xs flex-shrink-0 mt-0.5 font-bold">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                `;
+            }
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // NETTOYAGE ET STRUCTURATION DE LA REPONSE IA
+        function processAndAppendBotResponse(rawText) {
+            const container = document.getElementById('chat-messages');
+
+            // Extraction des tags de sources
+            let cleanText = rawText;
+            const sources = [];
+
+            const sourceMappings = [
+                { tag: '[TAB:lots]', label: 'Onglet : Suivi des Lots', action: "switchTab('lots')" },
+                { tag: '[TAB:par]', label: 'Onglet : Volet Social & PAR', action: "switchTab('par')" },
+                { tag: '[TAB:pole]', label: 'Onglet : Pôle de Croissance', action: "switchTab('pole')" },
+                { tag: '[TAB:analytics]', label: 'Onglet : Vue Synthétique', action: "switchTab('analytics')" },
+                { tag: '[TAB:bailleur]', label: 'Onglet : Bailleurs & Financements', action: "switchTab('bailleur')" },
+                { tag: '[LOT:lot1]', label: 'Source : Lot 1 (Génie Civil)', action: "switchTab('lots'); setTimeout(()=>selectLot('lot1'), 300);" },
+                { tag: '[LOT:lot2]', label: 'Source : Lot 2 (Centrale Hydro)', action: "switchTab('lots'); setTimeout(()=>selectLot('lot2'), 300);" },
+                { tag: '[LOT:lot3]', label: 'Source : Lot 3 (Ligne HT)', action: "switchTab('lots'); setTimeout(()=>selectLot('lot3'), 300);" },
+                { tag: '[LOT:lot4]', label: 'Source : Lot 4 (Route RN1)', action: "switchTab('lots'); setTimeout(()=>selectLot('lot4'), 300);" },
+                { tag: '[PAR:pges]', label: 'Source : Sous-composante PGES', action: "switchTab('par'); setTimeout(()=>selectSubPar('pges'), 300);" },
+                { tag: '[PAR:par_reinstallation]', label: 'Source : Sous-composante PAR Réinstallation', action: "switchTab('par'); setTimeout(()=>selectSubPar('par_reinstallation'), 300);" },
+                { tag: '[POLE:irrigation]', label: 'Source : Pôle Irrigation (45 000 ha)', action: "switchTab('pole'); setTimeout(()=>selectSubPole('irrigation'), 300);" },
+                { tag: '[POLE:developpement]', label: 'Source : Développement Local (PDLK/FIL)', action: "switchTab('pole'); setTimeout(()=>selectSubPole('developpement'), 300);" },
+                { tag: '[COMP:c4]', label: 'Source : Composante 4 (Gestion ABK)', action: "switchTab('composantes'); setTimeout(()=>selectComposante('c4'), 300);" }
+            ];
+
+            sourceMappings.forEach(s => {
+                if (cleanText.includes(s.tag)) {
+                    cleanText = cleanText.replaceAll(s.tag, '');
+                    sources.push(s);
+                }
+            });
+
+            // Formater le markdown basique (gras, puces)
+            let formattedText = cleanText
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/\n\n/g, '<br><br>')
+                .replace(/\n\n/g, '</p><p class="mt-2">')
                 .replace(/\n- /g, '<br>• ');
-        }
 
-        function escapeHtml(str) {
-            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        }
-
-        // MOTEUR MAPPING INTELLIGENT LOCAL MULTI-QUESTIONS
-        function generateComprehensiveFallback(q) {
-            const query = q.toLowerCase();
-            let reply = "";
-            let btns = [];
-
-            if (query.includes('lot 1') || query.includes('génie civil') || query.includes('barrage') || query.includes('cggc')) {
-                reply = "<strong>Lot 1 (Génie Civil du Barrage) :</strong> Avancement physique à 30,5%, consommant 88,89% du délai. Suspendu depuis le 8 août 2023 pour force majeure. Une reprise ferme est programmée au 01/06/2026 grâce au plan de relance conjointe et au déploiement du dispositif sécuritaire FDS.";
-                btns.push(`<button onclick="navigateFromChat('lot', 'lot1')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 1</button>`);
-                btns.push(`<button onclick="navigateFromChat('tab', 'lots')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Synthèse des Lots</button>`);
-            } else if (query.includes('lot 2') || query.includes('centrale') || query.includes('hydro')) {
-                reply = "<strong>Lot 2 (Centrale Hydroélectrique 130 MW) :</strong> Avancement physique à 17,3%. Suspension liée au Génie Civil. La Banque Mondiale (IDA) a acté la reprise à 100% de la quote-part de l'AFD (39,87 Millions USD).";
-                btns.push(`<button onclick="navigateFromChat('lot', 'lot2')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 2</button>`);
-            } else if (query.includes('lot 3') || query.includes('ligne') || query.includes('ht') || query.includes('poste')) {
-                reply = "<strong>Lot 3 (Ligne HT 132 kV & Postes) :</strong> Avancement global de 51,62% (Ligne réalisée à 83,3%, Poste de Bangoula à 0%). Prolongation contractuelle accordée jusqu'au 30 septembre 2027.";
-                btns.push(`<button onclick="navigateFromChat('lot', 'lot3')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 3</button>`);
-            } else if (query.includes('lot 4') || query.includes('rn1') || query.includes('route')) {
-                reply = "<strong>Lot 4 (Déviation Route RN1-W) :</strong> Avancement physique à 36,0%. Travaux en arrêt sécuritaire depuis fin 2024 suite aux menaces. Intégration prioritaire dans le périmètre FDS en 2026.";
-                btns.push(`<button onclick="navigateFromChat('lot', 'lot4')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Fiche Lot 4</button>`);
-            } else if (query.includes('par') || query.includes('social') || query.includes('réinstallation') || query.includes('vague')) {
-                reply = "<strong>Volet Social & PAR :</strong> PAR 1 entièrement achevé avec appui aux vulnérables (493 kits micro-projets). Pour le PAR 2A (17 sites), 327,3 M$ ont été approuvés sur 433 M$ requis (Gap de 216,6 M$). Les APD des 6 sites prioritaires sont finalisés avec un COS de 30%.";
-                btns.push(`<button onclick="navigateFromChat('par', 'par_reinstallation')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Détail PAR 2</button>`);
-                btns.push(`<button onclick="navigateFromChat('par', 'pges')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir PGES</button>`);
-            } else if (query.includes('irrigation') || query.includes('pôle') || query.includes('hectare') || query.includes('ha') || query.includes('agricole')) {
-                reply = "<strong>Pôle de Croissance & Irrigation :</strong> Les études APD/DAO pour les 20 000 ha (Phase 3) ont été validées et transmises à la Banque Mondiale. Le périmètre de Bonféba (350 ha) est 100% achevé (458 femmes accompagnées) et 108 ha sont en cours à Kandadji/Sanguilé.";
-                btns.push(`<button onclick="navigateFromChat('pole', 'irrigation')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Pôle Irrigation</button>`);
-            } else if (query.includes('micro') || query.includes('fil') || query.includes('pdlk') || query.includes('projet')) {
-                reply = "<strong>Micro-Projets FIL & PDLK :</strong> Portefeuille dynamique comprenant PTBA 2022 (82 projets), PTBA 2024 (64 projets) et PTBA 2025 (58 projets). Chantiers 2026 : Maternité Wanzerbé (70%), Magasin Bankilaré (80%) et formation de 200 femmes étuveuses et mareyeuses.";
-                btns.push(`<button onclick="navigateFromChat('pole', 'developpement')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Micro-Projets FIL</button>`);
-            } else if (query.includes('bailleur') || query.includes('budget') || query.includes('financement') || query.includes('argent') || query.includes('fonds')) {
-                reply = "<strong>Architecture de Financement :</strong> Budget global de 916,19 Mds FCFA (100% engagé par 11 Bailleurs de fonds : BM/IDA, BAD, BID, BOAD, BADEA, FKDEA, OPEC Fund, État du Niger). Co-financement actif du plan de relance 2026.";
-                btns.push(`<button onclick="navigateFromChat('tab', 'bailleur')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Bailleurs & Financements</button>`);
-            } else if (query.includes('abk') || query.includes('recrutement') || query.includes('personnel') || query.includes('composante 4')) {
-                reply = "<strong>Composante 4 (Gestion & ABK) :</strong> 47 cadres et experts recrutés (couverture de 85%). Réforme organisationnelle finalisée en avril 2026 par Faucon & Talents avec grilles d'évaluation KPI.";
-                btns.push(`<button onclick="navigateFromChat('c4', 'c4')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Voir Composante 4 (ABK)</button>`);
+            let sourcesHTML = '';
+            if(sources.length > 0) {
+                sourcesHTML = `
+                    <div class="mt-3 pt-2 border-t border-slate-100 flex flex-wrap gap-1.5 items-center">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase mr-1"><i class="fa-solid fa-link text-brand-500"></i> Accéder au composant :</span>
+                        ${sources.map(src => `
+                            <button onclick="${src.action}" class="text-[10px] bg-brand-50 hover:bg-brand-100 text-brand-700 border border-brand-200 px-2 py-0.5 rounded-md font-bold transition flex items-center gap-1">
+                                ${src.label} <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                `;
             } else {
-                reply = "Le Programme Kandadji (P_KRESMIN) réunit la construction du barrage, l'énergie (130 MW), l'irrigation (45 000 ha) et le PAR. Cliquez ci-dessous pour explorer l'ensemble des données décisionnelles :";
-                btns.push(`<button onclick="navigateFromChat('tab', 'analytics')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Vue Analytics Consolidée</button>`);
-                btns.push(`<button onclick="navigateFromChat('tab', 'lots')" class="chat-src-btn"><i class="fa-solid fa-link"></i> Suivi des Lots</button>`);
+                // Si l'IA n'a pas taggué, détection automatique intelligente de mots-clés
+                let autoAction = "switchTab('analytics')";
+                let autoLabel = "Vue Synthétique & Analytics";
+
+                const lower = cleanText.toLowerCase();
+                if(lower.includes('lot 1') || lower.includes('barrage') || lower.includes('génie civil') || lower.includes('cggc')) {
+                    autoAction = "switchTab('lots'); setTimeout(()=>selectLot('lot1'), 300);";
+                    autoLabel = "Fiche Lot 1 (Barrage)";
+                } else if(lower.includes('lot 2') || lower.includes('centrale') || lower.includes('hydro')) {
+                    autoAction = "switchTab('lots'); setTimeout(()=>selectLot('lot2'), 300);";
+                    autoLabel = "Fiche Lot 2 (Centrale)";
+                } else if(lower.includes('lot 3') || lower.includes('ligne') || lower.includes('132')) {
+                    autoAction = "switchTab('lots'); setTimeout(()=>selectLot('lot3'), 300);";
+                    autoLabel = "Fiche Lot 3 (Ligne HT)";
+                } else if(lower.includes('par') || lower.includes('réinstallation') || lower.includes('menage') || lower.includes('vague')) {
+                    autoAction = "switchTab('par')";
+                    autoLabel = "Onglet Volet Social & PAR";
+                } else if(lower.includes('irrigation') || lower.includes('hectare') || lower.includes('micro-projet') || lower.includes('pdlk')) {
+                    autoAction = "switchTab('pole')";
+                    autoLabel = "Onglet Pôle de Croissance";
+                } else if(lower.includes('bailleur') || lower.includes('bad') || lower.includes('banque mondiale') || lower.includes('bid')) {
+                    autoAction = "switchTab('bailleur')";
+                    autoLabel = "Onglet Bailleurs & Financements";
+                }
+
+                sourcesHTML = `
+                    <div class="mt-3 pt-2 border-t border-slate-100 flex items-center gap-1.5">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase"><i class="fa-solid fa-link text-brand-500"></i> Source :</span>
+                        <button onclick="${autoAction}" class="text-[10px] bg-brand-50 hover:bg-brand-100 text-brand-700 border border-brand-200 px-2 py-0.5 rounded-md font-bold transition flex items-center gap-1">
+                            ${autoLabel} <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                        </button>
+                    </div>
+                `;
             }
 
-            return `<p>${reply}</p><div class="mt-2 pt-2 border-t border-slate-100 font-semibold text-[10px] text-slate-500">Source(s) dans l'application :</div><div class="mt-1 flex flex-wrap gap-1.5">${btns.join('')}</div>`;
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'flex items-start gap-2.5 animate-fade-in-up';
+            msgDiv.innerHTML = `
+                <div class="w-7 h-7 rounded-lg bg-brand-600 text-white flex items-center justify-center text-xs flex-shrink-0 mt-0.5 shadow-sm">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-xs text-slate-700 max-w-[85%] space-y-1">
+                    <p class="leading-relaxed">${formattedText}</p>
+                    ${sourcesHTML}
+                </div>
+            `;
+
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // SYSTEME DE SECOURS DE CHAT EN LOCAL SANS RESEAU
+        function fallbackBotResponse(query) {
+            const q = query.toLowerCase();
+            let ans = "";
+            let action = "switchTab('analytics')";
+            let sourceLabel = "Synthèse Générale";
+
+            if (q.includes('reprise') || q.includes('date') || q.includes('quand') || q.includes('relance')) {
+                ans = "La date cible fixée par le Gouvernement du Niger pour la reprise effective des travaux sur le site est le **01 Juin 2026**. Cette décision découle des réunions de haut niveau tenues du 27 au 30 avril 2026 avec le Premier Ministre et les Bailleurs de fonds (BAD, BM). Un dispositif de sécurisation FDS a été déployé sur zone.";
+                action = "switchTab('analytics')";
+                sourceLabel = "Jalons Stratégiques & Timeline";
+            } else if (q.includes('lot 1') || q.includes('barrage') || q.includes('génie civil')) {
+                ans = "Le **Lot 1 (Génie Civil du Barrage)** attribué à CGGC enregistre un avancement physique de **30,50%** pour un délai consommé de 88.89%. Les travaux sont suspendus depuis le 8 août 2023 pour cas de force majeure. Le nouveau planning cible (Version IX-A) prévoit un achèvement complet à fin 2030.";
+                action = "switchTab('lots'); setTimeout(()=>selectLot('lot1'), 300);";
+                sourceLabel = "Fiche Technique Lot 1";
+            } else if (q.includes('lot 2') || q.includes('centrale') || q.includes('mw')) {
+                ans = "Le **Lot 2 (Centrale Hydroélectrique de 130 MW)** est à **17,30%** d'avancement physique. Il est actuellement dépendant de la reprise des travaux de béton sur le Lot 1. La Banque Mondiale (IDA) a accepté de reprendre à 100% la quote-part de financement suite au retrait de l'AFD (39,87M$).";
+                action = "switchTab('lots'); setTimeout(()=>selectLot('lot2'), 300);";
+                sourceLabel = "Fiche Technique Lot 2";
+            } else if (q.includes('lot 3') || q.includes('ligne') || q.includes('ht')) {
+                ans = "Le **Lot 3 (Ligne HT 132kV)** présente un avancement global de **51,62%**. La ligne de transport Niamey-Kandadji est très avancée (83,3%), mais le poste d'arrivée de Bangoula est à 0% d'exécution. Une extension contractuelle de 26 mois est en cours pour reprogrammer la livraison au 30 septembre 2027.";
+                action = "switchTab('lots'); setTimeout(()=>selectLot('lot3'), 300);";
+                sourceLabel = "Fiche Technique Lot 3";
+            } else if (q.includes('par') || q.includes('réinstallation') || q.includes('déplacé') || q.includes('pap')) {
+                ans = "Le Plan d'Action de Réinstallation (**PAR 2A**) concerne l’aménagement de 17 sites d’accueil pour les populations expropriées de la retenue. Les études APD de 6 sites prioritaires (Seno-Farey, Kandadji 2, Issilé, Garey...) sont finalisées par STUDI International avec un COS de 30%. Le besoin global est de 433M$ avec 327.33M$ déjà approuvés.";
+                action = "switchTab('par'); setTimeout(()=>selectSubPar('par_reinstallation'), 300);";
+                sourceLabel = "Fiche PAR Réinstallation";
+            } else if (q.includes('irrigation') || q.includes('hectare') || q.includes('ha')) {
+                ans = "La Composante Irrigation vise un potentiel de **45 000 hectares** aménagés. Les études APD/DAO de la Phase 3 (20 000 ha) regroupées en 3 lots ont toutes été validées et transmises fin 2025/début 2026. Le périmètre de Bonféba (350 ha) est 100% achevé et exploité par 458 femmes.";
+                action = "switchTab('pole'); setTimeout(()=>selectSubPole('irrigation'), 300);";
+                sourceLabel = "Pôle Irrigation (45 000 ha)";
+            } else if (q.includes('bailleur') || q.includes('argent') || q.includes('financement') || q.includes('budget')) {
+                ans = "Le budget total du Programme Kandadji s'élève à **916.19 Milliards FCFA** soutenu par 11 Bailleurs de Fonds. La **BAD** est le Chef de file du groupe des Partenaires. La **Banque Mondiale (IDA)** est le principal bailleur de la Centrale et du PAR. La BID intervient sur la Ligne HT et la RN1.";
+                action = "switchTab('bailleur')";
+                sourceLabel = "Tableau des Bailleurs & PTF";
+            } else {
+                ans = "Voici une synthèse des informations disponibles sur le Programme Kandadji (P_KRESMIN) : Le projet intègre 4 Composantes majeures (Infrastructures/Barrage 130 MW, PGES/PAR pour 3,7M de personnes, Pôle Irrigation 45 000 ha et Gestion ABK). Le taux global d'avancement physique consolidé est de 29,4%.";
+                action = "switchTab('analytics')";
+                sourceLabel = "Vue Synthétique & Analytics";
+            }
+
+            const formatted = ans.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            const rawResponse = `${formatted} [TAB:analytics]`;
+            processAndAppendBotResponse(rawResponse);
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
         }
     </script>
-    
-    <!-- STYLES DÉDIÉS AUX BOUTONS LIENS DU CHATBOT -->
-    <style>
-        .chat-src-btn {
-            display: inline-flex;
-            items-center: center;
-            gap: 6px;
-            margin-top: 6px;
-            margin-right: 4px;
-            padding: 5px 10px;
-            background-color: #f0f9ff;
-            color: #0284c7;
-            border: 1px solid #bae6fd;
-            border-radius: 8px;
-            font-size: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .chat-src-btn:hover {
-            background-color: #0284c7;
-            color: #ffffff;
-            border-color: #0284c7;
-            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
-        }
-    </style>
 </body>
 </html>
